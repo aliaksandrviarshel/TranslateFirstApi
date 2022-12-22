@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TranslateFirstApi.GameFeature.Gamer.GamePartipiant" Collapsed="true">
+    <Position X="10.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgAAAAIAAAAAAAAAAABABBAgAAIAA=</HashCode>
+      <FileName>GameFeature\Gamer\GamePartipiant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TranslateFirstApi.GameFeature.Services.GameService" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAgAAEAAAAAAAAAAgAAAAQ=</HashCode>
+      <FileName>GameFeature\Services\GameService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_games" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TranslateFirstApi.GameFeature.WordOption.Shuffling.Shuffler" Collapsed="true">
+    <Position X="5.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>GameFeature\WordOption\Shuffling\Shuffler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TranslateFirstApi.GameFeature.WordOption.Translate" Collapsed="true">
+    <Position X="2" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAACAAAAAA=</HashCode>
+      <FileName>GameFeature\WordOption\Translate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TranslateFirstApi.GameFeature.WordOption.Word" Collapsed="true">
+    <Position X="5.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAAAAAAAAAAAAAAQAAAAABAIAAAAgAAA=</HashCode>
+      <FileName>GameFeature\WordOption\Word.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TranslateFirstApi.GameFeature.WordsGeneration.Services.WordsGenerator" BaseTypeListCollapsed="true">
+    <Position X="4" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQAAAAAAAAAAAAAAAAAAAAAAAAgBABAAAAAE=</HashCode>
+      <FileName>GameFeature\WordsGeneration\Services\WordsGenerator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_wordsService" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TranslateFirstApi.GameFeature.WordsGeneration.Words.Services.WordsService" Collapsed="true">
+    <Position X="7" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>GameFeature\WordsGeneration\Words\Services\WordsService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TranslateFirstApi.GameFeature.Game">
+    <Position X="10.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEBBEAAABAAAAAAAIBQAgAGAAAAAFRAAAgAAAAA=</HashCode>
+      <FileName>GameFeature\Game.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_waitingRoomHubSender" />
+      <Field Name="_wordsGenerator" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_gamePartipiants" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="TranslateFirstApi.TranslateFirstHubFeature.HubSender.RoomHubSender" BaseTypeListCollapsed="true">
+    <Position X="2" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAgEAEAAAAAAAAIAgAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>TranslateFirstHubFeature\HubSender\RoomHubSender.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_hubContext" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TranslateFirstApi.TranslateFirstHubFeature.Services.UsersConnectionsService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAIAAAAAAAAABAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TranslateFirstHubFeature\Services\UsersConnectionsService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TranslateFirstApi.WaitingRoomFeature.CodeGeneration.CodeGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>WaitingRoomFeature\CodeGeneration\CodeGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TranslateFirstApi.WaitingRoomFeature.Counting.Counter" Collapsed="true">
+    <Position X="3.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>WaitingRoomFeature\Counting\Counter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TranslateFirstApi.WaitingRoomFeature.Services.WaitingRoomService" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAQCAAAIAAAgAAEAAAAAAAIBAAAAAAA=</HashCode>
+      <FileName>WaitingRoomFeature\Services\WaitingRoomService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_hubContext" />
+      <Field Name="_usersConnectionsService" />
+      <Field Name="_gameService" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_waitingRooms" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TranslateFirstApi.WaitingRoomFeature.Waiter.NicknameGeneration.NicknameGenerator" BaseTypeListCollapsed="true">
+    <Position X="2" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>WaitingRoomFeature\Waiter\NicknameGeneration\NicknameGenerator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_client" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TranslateFirstApi.WaitingRoomFeature.Waiter.WaitingUser">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACDAAAAAAAAAAIAAAAAAAAAAAAAAAAABAAAQAAAAAA=</HashCode>
+      <FileName>WaitingRoomFeature\Waiter\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_nicknameGenerator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TranslateFirstApi.WaitingRoomFeature.WaitingRoom">
+    <Position X="10.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAABAAAQAAAAAAAABAwgAAEAAIAABBAAAAAgAAA=</HashCode>
+      <FileName>WaitingRoomFeature\WaitingRoom.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_codeGenerator" />
+      <Field Name="_waitingRoomHubSender" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_users" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="TranslateFirstApi.TranslateFirstHubFeature.TranslateFirstHub">
+    <Position X="5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAACAAAAAAAAAQAAAAIABAgAAEAAAAAAAIBAgAAABA=</HashCode>
+      <FileName>TranslateFirstHubFeature\TranslateFirstHub.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_gameService" />
+      <Field Name="_usersConnectionsService" />
+      <Field Name="_waitingRoomService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Net.Http.HttpClient" Collapsed="true">
+    <Position X="2" Y="17.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="TranslateFirstApi.GameFeature.Services.IGameService" Collapsed="true">
+    <Position X="7.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAgAAEAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>GameFeature\Services\IGameService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TranslateFirstApi.GameFeature.WordsGeneration.Services.IWordsGenerator" Collapsed="true">
+    <Position X="10.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>GameFeature\WordsGeneration\Services\IWordsGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TranslateFirstApi.TranslateFirstHubFeature.HubSender.IRoomHubSender" Collapsed="true">
+    <Position X="7.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAgAAEAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>TranslateFirstHubFeature\HubSender\IRoomHubSender.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TranslateFirstApi.TranslateFirstHubFeature.Services.IUsersConnectionsService" Collapsed="true">
+    <Position X="4.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAIAAAAAAAAABAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TranslateFirstHubFeature\Services\IUsersConnectionsService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TranslateFirstApi.WaitingRoomFeature.CodeGeneration.ICodeGenerator" Collapsed="true">
+    <Position X="7.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>WaitingRoomFeature\CodeGeneration\ICodeGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TranslateFirstApi.WaitingRoomFeature.Services.IWaitingRoomService" Collapsed="true">
+    <Position X="5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAgAAEAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>WaitingRoomFeature\Services\IWaitingRoomService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TranslateFirstApi.WaitingRoomFeature.Waiter.NicknameGeneration.INicknameGenerator" Collapsed="true">
+    <Position X="7.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>WaitingRoomFeature\Waiter\NicknameGeneration\INicknameGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Microsoft.AspNetCore.SignalR.IHubContext&lt;THub&gt;" Collapsed="true">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

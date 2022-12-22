@@ -9,15 +9,15 @@ namespace TranslateFirstApi.GameFeature;
 public class Game
 {
     public Guid Id { get; private set; } = Guid.NewGuid();
-    public bool HasAnyUser => _gamePartipiants.Any();
-    private List<GamePartipiant> _gamePartipiants = new();
+    public bool HasAnyUser => _gamers.Any();
+    private List<GamerManager> _gamers = new();
     private Word? _currentWord;
     private readonly IRoomHubSender _waitingRoomHubSender;
     private readonly IWordsGenerator _wordsGenerator;
 
-    public Game(List<GamePartipiant> gamePartipiants, IRoomHubSender waitingRoomHubSender)
+    public Game(IEnumerable<GamerManager> gamers, IRoomHubSender waitingRoomHubSender)
     {
-        _gamePartipiants = gamePartipiants;
+        _gamers = gamers.ToList();
         _waitingRoomHubSender = waitingRoomHubSender;
         _wordsGenerator = new WordsGenerator(12);
     }
@@ -30,12 +30,12 @@ public class Game
 
     public bool IncludesUser(Guid userId)
     {
-        return _gamePartipiants.Any(x => x.Id == userId);
+        return _gamers.Any(x => x.Id == userId);
     }
 
     public void Leave(Guid userId)
     {
-        _gamePartipiants = _gamePartipiants.Where(x => x.Id != userId).ToList();
+        _gamers = _gamers.Where(x => x.Id != userId).ToList();
         _waitingRoomHubSender.RemoveUser(userId);
         _waitingRoomHubSender.ToAllAsync("GameUserLeft", userId);
         CheckAndHandleAllUsersAnswered();
@@ -43,9 +43,9 @@ public class Game
 
     public bool Answer(Guid userId, Guid translateId)
     {
-        var partipiant = _gamePartipiants.First(x => x.Id == userId);
+        var gamers = _gamers.First(x => x.Id == userId);
 
-        if (partipiant.Answer(translateId))
+        if (gamers.Answer(translateId))
         {
             CalculateUsersRating();
             if (_wordsGenerator.IsDone())
@@ -62,20 +62,19 @@ public class Game
         return CheckAndHandleAllUsersAnswered();
     }
 
-    public bool ContainsPartipiant(Guid id) => _gamePartipiants.Any(x => x.Id == id);
+    public bool ContainsGamer(Guid id) => _gamers.Any(x => x.Id == id);
 
     public GameDto ToDto()
     {
         _ = _currentWord ?? throw new ArgumentNullException("Current word is not set");
 
-        return new(Id, _gamePartipiants.Select(x => x.ToDto()).ToList(), _currentWord.ToDto());
+        return new(Id, _gamers.Select(x => x.ToDto()).ToList(), _currentWord.ToDto());
     }
 
     private bool CheckAndHandleAllUsersAnswered()
     {
-        if (_gamePartipiants.All(x => x.IsAnswered))
+        if (_gamers.All(x => x.IsAnswered))
         {
-
             CalculateUsersRating();
             var correctTranslateId = _currentWord.GetCorrectId();
             if (_wordsGenerator.IsDone())
@@ -93,32 +92,32 @@ public class Game
 
     private void CalculateUsersRating()
     {
-        var orderedPartipiants = _gamePartipiants.OrderByDescending(x => x.CorrectAnswersCount).ToList();
-        for (int i = 0; i < orderedPartipiants.Count; i++)
+        var orderedGamers = _gamers.OrderByDescending(x => x.CorrectAnswersCount).ToList();
+        for (int i = 0; i < orderedGamers.Count; i++)
         {
-            orderedPartipiants[i].Position = i + 1;
+            orderedGamers[i].SetPosition(i + 1);
         }
 
-        _gamePartipiants = orderedPartipiants;
+        _gamers = orderedGamers;
     }
 
     private void SetNextWord()
     {
         _currentWord = _wordsGenerator.GenerateNext();
-        _gamePartipiants.ForEach(x => x.SetCurrentWord(_currentWord));
+        _gamers.ForEach(x => x.SetCurrentWord(_currentWord));
     }
 
     private RoundEndedDto GetRoundEndedDto(Guid correctTranslateId)
     {
         _ = _currentWord ?? throw new ArgumentNullException("Current word is not set");
 
-        return new RoundEndedDto(_gamePartipiants.Select(x => x.ToDto()).ToList(), correctTranslateId, _currentWord.ToDto());
+        return new RoundEndedDto(_gamers.Select(x => x.ToDto()).ToList(), correctTranslateId, _currentWord.ToDto());
     }
 
     private GameEndedDto GetGameEndedDto(Guid correctTranslateId)
     {
         _ = _currentWord ?? throw new ArgumentNullException("Current word is not set");
 
-        return new GameEndedDto(_gamePartipiants.Select(x => x.ToDto()).ToList(), correctTranslateId);
+        return new GameEndedDto(_gamers.Select(x => x.ToDto()).ToList(), correctTranslateId);
     }
 }

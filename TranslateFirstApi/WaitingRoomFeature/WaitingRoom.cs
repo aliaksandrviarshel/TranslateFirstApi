@@ -50,7 +50,7 @@ public class WaitingRoom
     public Game StartGame()
     {
         var counter = new Counter();
-        return new Game(_users.Select(x => x.ToGamePartipiant(counter.Next())).ToList(), _waitingRoomHubSender);
+        return new Game(_users.Select(x => x.ToGamePartipiantManager(counter.Next())), _waitingRoomHubSender);
     }
 
     public bool HasAnyUser => _users.Any();

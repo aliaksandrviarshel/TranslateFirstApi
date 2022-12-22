@@ -16,14 +16,14 @@ public class GameService : IGameService
 
     public Task<UserAnsweredDto> Answer(Guid userId, Guid translateId)
     {
-        var game = _games.First(x => x.ContainsPartipiant(userId));
+        var game = _games.First(x => x.ContainsGamer(userId));
         var result = game.Answer(userId, translateId);
         return Task.FromResult(new UserAnsweredDto(result));
     }
 
     public Task<GameDto> GetGame(Guid userId, Guid gameId)
     {
-        return Task.FromResult(_games.First(x => x.Id == gameId && x.ContainsPartipiant(userId)).ToDto());
+        return Task.FromResult(_games.First(x => x.Id == gameId && x.ContainsGamer(userId)).ToDto());
     }
 
     public Task Leave(Guid userId)

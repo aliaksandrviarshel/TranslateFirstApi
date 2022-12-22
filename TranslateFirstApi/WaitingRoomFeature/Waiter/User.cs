@@ -29,8 +29,8 @@ public class WaitingUser
 
     public UserDto ToDto() => new(Id, Nickname);
 
-    public GamePartipiant ToGamePartipiant(int ratingPosition)
+    public GamerManager ToGamePartipiantManager(int ratingPosition)
     {
-        return new GamePartipiant(Id, Nickname, ratingPosition);
+        return new GamerManager(Id, Nickname, ratingPosition);
     }
 }
